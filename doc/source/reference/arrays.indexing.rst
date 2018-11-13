@@ -194,11 +194,9 @@ basic slicing that returns a :term:`view`).
 
 .. warning::
 
-   The definition of advanced indexing means that ``x[(1,2,3),]`` is
-   fundamentally different than ``x[(1,2,3)]``. The latter is
-   equivalent to ``x[1,2,3]`` which will trigger basic selection while
-   the former will trigger advanced indexing. Be sure to understand
-   why this occurs.
+   By definition ``x[(1,2,3),]`` (same as ``x[((1,2,3),)]``) will trigger
+   advanced indexing, while ``x[(1,2,3)]`` (same as ``x[1,2,3]``) will 
+   trigger basic selection. Be sure to understand why this occurs.
 
    Also recognize that ``x[[1,2,3]]`` will trigger advanced indexing,
    whereas due to the deprecated Numeric compatibility mentioned above,
